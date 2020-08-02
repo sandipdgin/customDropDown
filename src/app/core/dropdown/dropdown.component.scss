@@ -1,0 +1,65 @@
+.dropdownComp {
+  background-color: #f9fafc;
+  border: 1px solid #dee3e7;
+  border-radius: 5px;
+  position: relative;
+  padding: 0px 40px 3px 5px;
+  line-height: 1.5;
+  min-height: 2rem;
+  z-index: 1;
+  &.active {
+    border: 1px solid #6c5efb;
+  }
+  .selectedItems {
+    color: #91aac8;
+    button {
+      margin: 0.2rem;
+      color: #91aac8;
+      background-color: #ffffff;
+      border: 1px solid #dee3e7;
+      svg {
+        color: #91aac8;
+      }
+    }
+  }
+  .ddCaret {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    button,
+    button:hover,
+    button:active,
+    button:focus,
+    button.btn,
+    button.btn:focus {
+      outline: none;
+      border: none;
+      // max-width: 38px;
+    }
+    .btn-sm {
+      padding: 0.25rem 0.45rem;
+    }
+    svg {
+      color: #6c5efb;
+    }
+  }
+  .dropdownlist {
+    margin-top: 0.5rem;
+    z-index: 100;
+    ul {
+      list-style: none;
+      padding-left: 0;
+      li {
+        display: flex;
+        color: #91aac8;
+        .checkbox {
+          margin-left: auto;
+        }
+        svg {
+          color: #6c5efb;
+        }
+      }
+    }
+  }
+}

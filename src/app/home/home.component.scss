@@ -1,0 +1,51 @@
+.bg-color {
+  background-color: #f7f8fc;
+}
+h5 {
+  color: #91aac8;
+  font-size: 1rem;
+  &.active {
+    color: #415a9c;
+  }
+}
+table {
+  thead {
+    tr {
+      background-color: #f9f9f9;
+      color: #91aac8;
+    }
+  }
+  tbody {
+    tr {
+      background-color: #ffffff;
+      color: #415a9d;
+    }
+  }
+}
+
+.modal-header {
+  background-color: #f9f9f9;
+  h6 {
+    color: #040847;
+  }
+  button.close,
+  button.close:focus {
+    border: none;
+    outline: none;
+  }
+}
+.modal-body {
+  small {
+    font-weight: bold;
+    color: #91aac8;
+  }
+  .content {
+    color: #3a5598;
+  }
+  textarea.form-control {
+    background-color: #fafafa;
+    border-radius: 0;
+    border: 1px solid #c7c7c7;
+  }
+}
+// f9f9f9

@@ -1,0 +1,139 @@
+<div class="container-fluid pt-3">
+  <div class="row">
+    <div class="col-md-4">
+      <h5><em>Filter By</em></h5>
+      <h5 class="active mt-3">Technology</h5>
+      <!-- Technology drop down -->
+      <app-dropdown [dropDownData]="technologyData"></app-dropdown>
+      <h5 class="active mt-3">Skill</h5>
+      <!-- Skill drop down -->
+      <app-dropdown [dropDownData]="skillsData"></app-dropdown>
+      <h5 class="active mt-3">Location</h5>
+      <!-- location drop down -->
+      <app-dropdown [dropDownData]="locationData"></app-dropdown>
+
+      <div class="d-flex flex-row-reverse bd-highlight mt-5">
+        <button type="button" class="btn btn-primary btn-sm">
+          Done
+        </button>
+        &nbsp;
+        <button type="button" class="btn btn-light btn-sm">
+          Cancel
+        </button>
+      </div>
+    </div>
+    <div class="col-md-8 bg-color">
+      <h5>Employee List</h5>
+      <div class="table-responsive">
+        <table class="table table-sm">
+          <thead>
+            <tr>
+              <th *ngFor="let item of title">{{ item }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of employees; index as i">
+              <td>{{ item.firstName }} {{ item.lastName }}</td>
+              <td>
+                {{ item.designation[0].name }}
+              </td>
+              <td>
+                {{ item.technologies[0].name }}
+              </td>
+              <td>
+                {{ item.skills[0].name }}
+              </td>
+              <td>
+                {{ item.experience }}
+              </td>
+              <td>
+                {{ item.baseLocation[0].name }}
+              </td>
+              <td>
+                {{ item.relocation === true ? "Yes" : "No" }}
+                <!-- {{ item.location[0].name }} -->
+              </td>
+
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-primary btn-sm"
+                  (click)="openModal(i)"
+                >
+                  Detail
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal -->
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h6 class="modal-title">Employee Details</h6>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <div><small>Name</small></div>
+          <div class="content">
+            {{ modalContent.firstName }} {{ modalContent.lastName }}
+          </div>
+        </div>
+        <div class="col-sm">
+          <div><small>Skill</small></div>
+          <div class="content">{{ modalContent.skills[0].name }}</div>
+        </div>
+        <div class="col-sm">
+          <div><small>Open to Relocate</small></div>
+          <div class="content">
+            {{ modalContent.relocation === true ? "Yes" : "No" }}
+          </div>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-sm">
+          <div><small>Designation</small></div>
+          <div class="content">{{ modalContent.designation[0].name }}</div>
+        </div>
+        <div class="col-sm">
+          <div><small>Availability</small></div>
+          <div class="content">{{ modalContent.experience }}</div>
+        </div>
+        <div class="col-sm"></div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-lg">
+          <div><small>Message</small></div>
+          <div class="content">
+            <textarea class="form-control" rows="3"></textarea>
+            <!-- {{ modalContent.message }} -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-footer justify-content-center">
+    <button type="button" class="btn btn-light btn-sm" (click)="closeModal()">
+      Cancel
+    </button>
+    <button type="button" class="btn btn-primary btn-sm" (click)="closeModal()">
+      Done
+    </button>
+    <!-- (click)="modal.close('Close click')" -->
+  </div>
+</ng-template>

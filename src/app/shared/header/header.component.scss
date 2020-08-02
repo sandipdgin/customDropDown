@@ -1,0 +1,20 @@
+.bg-dark {
+  background-color: #050a4e !important;
+}
+
+nav form.form-inline {
+  margin-right: 2rem;
+  input.form-control {
+    background-color: #405c9d;
+    border: none;
+    &::placeholder {
+      color: #ffffff;
+    }
+  }
+}
+.nav-item {
+  color: #8faac7;
+  .active {
+    color: #ffffff;
+  }
+}

@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+}
+.btn-light {
+  border: 1px solid #90abc8;
+  color: #90abc8;
+  background-color: #ffffff;
+}
+.btn-primary {
+  background-color: #6b63f7;
+  border: 1px solid #6b63f7;
+}
+.btn-sm {
+  padding: 0.25rem 1.25rem;
+}
